@@ -7,6 +7,8 @@ So, I was taking a class on Rmarkdowm. I had to teach parameterized reports usin
 
 __BUT__, I goofed up while giving the demo. The file I made before had decided to embarrass me. So I made one on the go, it worked fine but I was not able to do such a great job explaining the process. With this repo I plan to do this. I shall also put up a screen recorded video along with the code in this repo.
 
+_Look up the ex_para.Rmd and script_run_all_analysis_
+
 
 ### A little about the data
 
