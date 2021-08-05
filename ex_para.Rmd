@@ -1,0 +1,77 @@
+---
+title: "Damage Control - para purrr"
+author: "Ayush Patel"
+date: "05/08/2021"
+output: html_document
+params:
+  dist: "Kheda"
+  sch_pri: 1
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r libs, include=FALSE}
+library(here)
+library(tidyverse)
+```
+
+```{r data_import, include=FALSE}
+read_csv("clean_gujarat_vd.csv") -> data_vill_census
+```
+
+# Analysis for `r params$dist` district
+
+Total number of villages in `r params$dist` district are `r data_vill_census %>% filter(district_name == params$dist) %>% nrow()`.
+
+```{r plt, echo=FALSE}
+data_vill_census %>% 
+  filter(district_name == params$dist) %>% 
+  mutate(
+    perc_sc_pop = total_scheduled_castes_population_of_village*100/total_population_of_village
+  ) %>% 
+  ggplot(aes(nearest_statutory_town_distance_in_km,perc_sc_pop ))+
+  geom_jitter(alpha = 0.5)+
+  labs(
+    title = paste(params$dist,"- Distance to closest town vs percentage of SC population in village"),
+    y = "% SC pop",
+    x = "Distance to closest town (km)"
+  )+
+  theme_bw()
+```
+
+
+```{r echo=FALSE}
+data_vill_census %>% 
+  filter(district_name == params$dist) %>% 
+  nrow()
+```
+
+
+
+# Using another para as well
+
+```{r plt_sch_pri_dist, echo=FALSE}
+data_vill_census %>% 
+  filter(district_name == params$dist) %>% 
+  filter(govt_primary_school_status_a_1_na_2 == params$sch_pri) %>% 
+  mutate(
+    perc_sc_pop = total_scheduled_castes_population_of_village*100/total_population_of_village
+  ) %>% 
+  ggplot(aes(nearest_statutory_town_distance_in_km,perc_sc_pop ))+
+  geom_jitter(alpha = 0.5)+
+  labs(
+    title = paste(params$dist,"- Distance to closest town vs percentage of SC population in village"),
+    y = "% SC pop",
+    x = "Distance to closest town (km)"
+  )+
+  theme_bw()
+```
+
+```{r echo=FALSE}
+data_vill_census %>% 
+  filter(district_name == params$dist) %>% 
+  filter(govt_primary_school_status_a_1_na_2 == params$sch_pri) %>%
+  nrow()
+```
