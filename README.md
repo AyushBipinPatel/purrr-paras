@@ -16,6 +16,6 @@ The data I am using is the data from Census Village Directory for the sate of Gu
 
 ### The videos
 
-The [link to video](https://youtu.be/UvrldLbsfdM) for how to write parameterised reports. The screen recorder did not record anything other than my RStudio, so some parts look weird. But the generated files are uploaded on the repo for reference.
+The [link to video](https://youtu.be/NW0ym4lz9ss) for how to write parameterised reports. The screen recorder did not record anything other than my RStudio, so some parts look weird. But the generated files are uploaded on the repo for reference.
 
 The [second video](https://youtu.be/X7HqTH-7_8g) is for show execution of the scripts that are written.

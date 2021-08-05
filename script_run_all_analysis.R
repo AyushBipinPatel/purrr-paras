@@ -11,7 +11,7 @@ render_analysis_all_dist <- function(para1,para2){
   )
 }
 
-read_csv("clean_gujarat_vd.csv") -> data_vill_census
+readr::read_csv("clean_gujarat_vd.csv") -> data_vill_census
 
 vec_dist = unique(data_vill_census$district_name)
 
