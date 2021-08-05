@@ -13,3 +13,7 @@ _Look up the ex_para.Rmd and script_run_all_analysis_
 ### A little about the data
 
 The data I am using is the data from Census Village Directory for the sate of Gujarat. I have cleaned the column names beforehand.
+
+### The videos
+
+The [link to video](https://youtu.be/UvrldLbsfdM) for how to write parameterised reports. The screen recorder did not anything other than my RStudio, so some parts look weird. But the generated files are uploaded on the repo for reference. 
